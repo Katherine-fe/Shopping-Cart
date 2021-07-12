@@ -1,0 +1,33 @@
+@use '../../../styles.scss' as *;
+
+.body-form{
+    width: 100%;
+    height: calc(100vh - 229px);
+    font-family: $font;
+    picture{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.btn-style{
+    background-color: $redLight;
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid $primary;
+    &:hover{
+        background-color: $primary;
+    }
+}
+.footer{
+    width: 100%;
+    img{
+        width: 100%;
+    }
+}
