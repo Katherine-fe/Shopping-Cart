@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ModalComponent } from './components/modal/modal.component';
 import { CartComponent } from './view/cart/cart.component';
 import { ClientComponent } from './view/client/client.component';
 import { LoginComponent } from './view/login/login.component';
