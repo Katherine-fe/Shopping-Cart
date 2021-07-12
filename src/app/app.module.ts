@@ -13,6 +13,7 @@ import { CartComponent } from './view/cart/cart.component';
 import { LoginComponent } from './view/login/login.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ClientFormComponent } from './components/client-form/client-form.component';
+import { ClientTableComponent } from './components/client-table/client-table.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
     LoginComponent,
     ModalComponent,
     ClientFormComponent,
+    ClientTableComponent,
   ],
   imports: [
     BrowserModule,
