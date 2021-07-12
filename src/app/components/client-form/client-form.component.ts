@@ -8,8 +8,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./client-form.component.scss']
 })
 export class ClientFormComponent implements OnInit {
-  show: boolean = false; 
-  theCheckBox: boolean = true; //op1
+  show: boolean = true; 
+  radioParami:boolean = true;
+  theCheckedBox: boolean =false; //op1
+  
   public clientForm: FormGroup;
 
   constructor(private fb: FormBuilder) { 
@@ -22,11 +24,14 @@ export class ClientFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.clientForm;
+    this.radioParami;
   }
 
-  toggleVisibility(e: any){
-    this.show= e.target.checked;
+  toggleVisibility(value: any){
+    this.theCheckedBox= value;
   }
+
+ 
   
 
   sendClient(){
