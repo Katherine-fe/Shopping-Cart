@@ -12,6 +12,7 @@ import { ProductsComponent } from './view/products/products.component';
 import { CartComponent } from './view/cart/cart.component';
 import { LoginComponent } from './view/login/login.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ClientFormComponent } from './components/client-form/client-form.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,16 @@ import { ModalComponent } from './components/modal/modal.component';
     CartComponent,
     LoginComponent,
     ModalComponent,
+    ClientFormComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
