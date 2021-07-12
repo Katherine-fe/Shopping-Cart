@@ -1,0 +1,25 @@
+.checkbox{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Rubik';
+    padding: 5%;
+}
+
+#para-mi, #otro-cliente{
+    display: flex;
+    justify-content: center;
+    font-family: 'Rubik';
+    font-weight: bold;
+}
+
+form{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btnAgregar{
+    background-color: #EE3038;
+    align-self: center;
+}

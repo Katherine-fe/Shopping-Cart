@@ -1,1 +1,28 @@
-<p>nav-bar works!</p>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #EE3038;">
+    <div class="container-fluid">
+      <button (click)="toggleCollapse()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" [class.show]="show" style="font-family: Rubik; font-weight: bold;font-size: 18px;">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <h1 *ngIf="show==true"style="color:#FFFCFC;">¡Hola, Squad02!</h1>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#" style="color:#FFFCFC;">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:#FFFCFC;">Carrito de Compras</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#" style="color:#FFFCFC;">Cerrar Sesión</a>
+          </li>
+        </ul>
+    </div>
+     <a *ngIf="show==false" class="navbar-brand" href="#" style="color: #FFFCFC; font-family: Rubik; font-weight: bold;font-size: 25px;"> NutriMarket 
+      </a>
+    <a *ngIf="show==false" class="navbar-brand" href="#">
+        <img src="../../../assets/carrito.svg" alt="" width="40" height="30">
+      </a>      </div>
+  </nav>

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule  } from '@angular/fire';
@@ -28,6 +27,8 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
