@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+/* @use '../node_modules/bootstrap/scss/variables' as *; */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+$primary : #EE3038;
+$white: #FFFCFC;
+$whiteHumo: #EDE7E7;
+$title: #2C2929;
+$titleLight: #999999;
+$titleHumo: #616161;
+$check: #35AD33;
+$redLight: #F65E65;
