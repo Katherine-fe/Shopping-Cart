@@ -1,9 +1,15 @@
-<div class="card mb-3" style="width: 18rem;"> <!-- *ngFor="let product of items" -->
+<div class="card mb-3" > <!-- style="width: 18rem;" --><!-- *ngFor="let product of items" -->
     
-    <div class="row g-0">
+    <div class="g-0 container">
     
-        <div class="col-md-4">
+        <div class="col-md-4 image-quantity">
             <img src="../../../assets/image-example.jpg" class="img-fluid rounded-start" style="width: 2rem" alt="..."> <!-- [src]="product.image" -->
+            
+            <div class="quantity">
+                <button class="btn btn-danger" ><i class="fas fa-minus-circle"></i></button> <!-- (click)="minousOne(product)" -->
+                <p class="card-text">1</p>
+                <button class="btn btn-danger"><i class="fas fa-plus-circle"></i></button> <!-- (click)="plusOne(product)" -->  
+            </div>
         </div>
 
         <div class="card-body">
@@ -13,10 +19,6 @@
                     Cantidad: 48 ltas</h6>
                 <p class="card-text">Precio: S/. 151.46</p> <!-- {{ product.price | currency:'S/.' }} -->
                 <p class="card-text">Precio sugerido: S/. 189.33</p>
-                
-                <button class="btn btn-danger" ><i class="fas fa-minus-circle"></i></button> <!-- (click)="minousOne(product)" -->
-                <p class="card-text">1</p>
-                <button class="btn btn-danger"><i class="fas fa-plus-circle"></i></button> <!-- (click)="plusOne(product)" -->
                 <button class="btn btn-danger" >AGREGAR <i class="fas fa-shopping-cart"></i></button> <!-- (click)="addItemToCar(product)" -->
             </div>
         </div>
