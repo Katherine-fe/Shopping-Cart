@@ -1,14 +1,14 @@
 <section class="checkbox">
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="radioParami" value="true"
-         [(ngModel)]="theCheckBox" (change)="toggleVisibility($event)">
+        <input class="form-check-input" type="radio" name="radioParami" id="radioParami"
+         [checked]="theCheckedBox" >
         <label class="form-check-label" for="radioParami">
         Para mí
         </label>
     </div>
     <div class="form-check">
         <input class="form-check-input" type="radio" name="radioOtroC" value="false"
-        [(ngModel)]="theCheckBox" (change)="toggleVisibility($event)">
+        [(ngModel)]="theCheckedBox" (change)="toggleVisibility($event)">
         <label class="form-check-label" for="radioOtroC">
         Otro cliente
         </label>
@@ -29,7 +29,9 @@
             <label for="exampleInputPassword1" class="form-label">Código de zona</label>
             <input type="text" class="form-control" formControlName="codZone" id="codZone">
         </div>
-        
+        <span>
+        <img src="../../assets/Icons/i.png">Consulta el codigo de zona
+        </span>
         <button type="submit" class="btn btn-primary btnAgregar" [disabled]="!clientForm.valid">AGREGAR CLIENTE</button>
     </form>
 </section>
