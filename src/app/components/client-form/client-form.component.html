@@ -1,24 +1,22 @@
-<section class="checkbox">
- 
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="radioOption" value="paraMi"
-        > <!--[checked]="theCheckedBox"-->
-        <label class="form-check-label" for="radioParami">
-        Para mí
-        </label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="radioOption" value="otroCliente"
-          > <!--[(ngModel)]="theCheckedBox" (change)="toggleVisibility($event)"-->
-        <label class="form-check-label" for="radioOtroC">
-        Otro cliente
-        </label>
-    </div>
-    
-</section>
 
-<section *ngIf="show" id="para-mi">
-    <form [formGroup]="clientForm" (ngSubmit)="sendClient(clientForm.value)">
+<form [formGroup]="clientForm" (ngSubmit)="sendClient(clientForm.value)" class="form-client">
+    <section class="checkbox">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioOption" [value]="true" 
+            formControlName="esTrabajador" (change)="cambioRadio()"> <!--[checked]="theCheckedBox"-->
+            <label class="form-check-label" for="radioParami">
+            Para mí
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioOption"  [value]="false"
+            formControlName="esTrabajador" (change)="cambioRadio()"> <!--[(ngModel)]="theCheckedBox" (change)="toggleVisibility($event)"-->
+            <label class="form-check-label" for="radioOtroC">
+            Otro cliente
+            </label>
+        </div>  
+    </section>
+    <section *ngIf="show" id="para-mi">
         <input type="hidden" formControlName="id">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nombre</label>
@@ -35,12 +33,10 @@
         <span>
         <img src="../../assets/Icons/i.png">Consulta el codigo de zona
         </span>
-        <button type="submit" class="btn btn-primary btnAgregar" >AGREGAR CLIENTE</button>
-    </form>
-</section>
+        <button type="submit" class="btn btn-primary btn-style" >AGREGAR CLIENTE</button>
+    </section>
 
-<section id="otro-cliente" *ngIf="!show">
-    <form [formGroup]="clientForm" (ngSubmit)="sendClient(clientForm.value)">
+    <section id="otro-cliente" *ngIf="!show">
         <input type="hidden" formControlName="id">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nombre Eunice</label>
@@ -54,7 +50,9 @@
             <label for="exampleInputPassword1" class="form-label">Código de zona</label>
             <input type="text" class="form-control" formControlName="codigoZona" id="codZone">
         </div>
-        
-        <button type="submit" class="btn btn-primary btnAgregar" >AGREGAR CLIENTE</button>
-    </form>
-</section>
+        <span>
+            <img src="../../assets/Icons/i.png">Consulta el codigo de zona
+        </span>
+        <button type="submit"  class="btn btn-primary btnAgregar" >AGREGAR CLIENTE</button>
+    </section>
+</form>

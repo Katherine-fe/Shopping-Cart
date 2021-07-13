@@ -10,8 +10,6 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  /* email= "";
-  password=""; */
   formGroup= new FormGroup({
     email:new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),

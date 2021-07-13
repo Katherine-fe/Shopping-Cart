@@ -3,6 +3,7 @@ import { ClientService } from 'src/app/services/client.service';
 import { ClientsModel } from 'src/app/models/clients.model';
 
 
+
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -16,6 +17,8 @@ export class ClientComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    //  this.clientService.getClients().subscribe((res) => console.log(res));
+    
     this.clientService.getClients().subscribe((clientsSnapshot) => {
       this.clients= [];
       clientsSnapshot.forEach((clientData) => {
@@ -27,10 +30,11 @@ export class ClientComponent implements OnInit {
       })
     })
   }
-
-  
-  
-
-  
-
 }
+
+  
+  
+
+  
+
+

@@ -1,1 +1,8 @@
-<p>cart works!</p>
+<app-nav-bar></app-nav-bar>
+<app-saldo-disponible></app-saldo-disponible>
+
+<ul>
+    <li *ngFor="let product of (products$ | async)">
+        Nombre producto
+    </li>
+</ul>

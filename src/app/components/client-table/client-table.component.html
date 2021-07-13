@@ -15,10 +15,10 @@
             <td>{{client.data.documento}}</td>
             <td>{{client.data.codigoZona}}</td>
             <td>
-                <button class="btn-edit"><img src="../assets/icon/edit.svg"></button>
+                <img src="../assets/icon/edit.svg" (click)="editClient(client)">
             </td>
             <td>
-                <button class="btn-delete" (click)="deleteClient(client)"><img src="../assets/icon/trash.svg"></button>
+                <img src="../assets/icon/trash.svg" (click)="deleteClient(client)">
             </td>
     </tbody>
   </table>

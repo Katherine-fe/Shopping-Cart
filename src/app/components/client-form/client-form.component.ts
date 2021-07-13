@@ -2,6 +2,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ClientService } from 'src/app/services/client.service';
+import { ClientsModel } from 'src/app/models/clients.model';
 
 @Component({
   selector: 'app-client-form',
@@ -9,23 +10,29 @@ import { ClientService } from 'src/app/services/client.service';
   styleUrls: ['./client-form.component.scss']
 })
 export class ClientFormComponent implements OnInit {
-  show: boolean = true; 
-  radioParami:boolean = true;
-  theCheckedBox: boolean =false; //op1
+  show: boolean = true;
+
+ 
 
   public documentId = null;
   public currentStatus = 1;
   public clientForm: FormGroup;
 
+  
+
 
   constructor(private fb: FormBuilder,
     private clientService: ClientService) { 
+      
     this.clientForm = this.fb.group({
       id: new FormControl(''),
       nombre: new FormControl('', [Validators.required]),
       documento: new FormControl('', [Validators.required, Validators.maxLength(8)]),
-      codigoZona: new FormControl('', [Validators.required])
+      codigoZona: new FormControl('', [Validators.required]),
+      esTrabajador: new FormControl(true)
     })
+
+    // this.setDefaultValues()
     // this.radioButton = this.fb.group({
     //   option: new FormControl(null)
     // })
@@ -33,15 +40,14 @@ export class ClientFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.clientForm;
-    this.radioParami;
-  }
+    this.show = this.show
+    // this.clientForm.value.esTrabajador= true;
+    }
 
-  toggleVisibility(value: any){
-    console.log(value);
-    this.theCheckedBox= value;
+  cambioRadio(){
+    this.show = !this.show
+    console.log(this.show) 
   }
-
- 
   
 
   sendClient(form: any, documentId = this.documentId){
@@ -80,6 +86,8 @@ export class ClientFormComponent implements OnInit {
       // }, (error) => {
       //   console.log(error);
       // });
+      this.clientForm.reset();
+      this.show= true;
     }
   }
 

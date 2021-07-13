@@ -3,5 +3,6 @@ export interface ClientsModel{
     documento:string,
     nombre: string,
     codigoZona: string,
-    esTrabajdor: boolean
+    esTrabajdor: boolean,
+    
 }

@@ -14,6 +14,12 @@ export class ClientTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  editClient(client: any){
+    this.clientService.getClient(client.id).subscribe((clientSnapshot) => {
+      console.log(clientSnapshot);
+    })
+  }
+
   deleteClient(client: any){
     this.clientService.deleteClient(client.id)
   }

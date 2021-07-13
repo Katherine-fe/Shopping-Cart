@@ -18,6 +18,8 @@ import { ClientComponent} from './view/client/client.component'
 import { ClientFormComponent } from './components/client-form/client-form.component';
 import { ClientTableComponent } from './components/client-table/client-table.component';
 import { SaldoDisponibleComponent } from './components/saldo-disponible/saldo-disponible.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import { SaldoDisponibleComponent } from './components/saldo-disponible/saldo-di
     ClientFormComponent,
     ClientTableComponent,
     SaldoDisponibleComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { SaldoDisponibleComponent } from './components/saldo-disponible/saldo-di
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
