@@ -6,7 +6,7 @@
         <form [formGroup]="formGroup" class="flex" (ngSubmit)="login()">
             <div class="mb-3">
                 <label for="email"></label>
-              <input name="email" formControlName="email" type="email" placeholder="example@gmail.com" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input name="email" formControlName="email" type="email" autocomplete="off" placeholder="example@gmail.com" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="password"></label>
@@ -16,7 +16,7 @@
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
             </div>
-            <button type="submit" data-bs-toggle="modal" class="btn btn-primary btn-style p-3" (click)="login()">Ingresar</button>
+            <button type="submit" data-bs-toggle="modal" class="btn btn-primary btn-style p-3">Ingresar</button>
         </form>
     </div>
 </section>

@@ -1,8 +1,25 @@
 <app-nav-bar></app-nav-bar>
-<app-saldo-disponible></app-saldo-disponible>
+<app-saldo-disponible
+  (goBack)="goBack()"  >
+</app-saldo-disponible>
 
-<ul>
+<div *ngIf="(products$ | async) as products">
+    <div *ngIf="products.length === 0" class="alert alert-secondary" role="alert">
+        El carrito está vacío. 
+        <br>
+        Agreguemos productos del catálogo.
+        <br>
+        Volvamos.
+    </div>
+    <ul>
+        <li *ngFor="let product of products">
+            Nombre producto
+        </li>
+    </ul>
+</div>
+
+<!-- <ul>
     <li *ngFor="let product of (products$ | async)">
         Nombre producto
     </li>
-</ul>
+</ul> -->
