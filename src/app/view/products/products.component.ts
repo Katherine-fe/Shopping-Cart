@@ -11,16 +11,21 @@ import { Product } from '../../models/products';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  category : string = ""
-
+  category : string = "";
+  filterpost : string = "";
   constructor(private productService: ProductService) {
     
    }
 
   ngOnInit(): void {  
+
 }
   
     filterCategoria( category : string) {
       this.category = category;
     }  
+/*     buscador(filterpost : string){
+      console.log(filterpost)
+      this.filterpost = filterpost
+    } */
   }

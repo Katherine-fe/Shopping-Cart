@@ -1,8 +1,9 @@
 <app-nav-bar></app-nav-bar>
 <section class="container">
     <div class="row pt-3">
-        <div class="input-group">
-            <input type="text" placeholder="Encuentra tu producto aqui" class="form-control mb-3">
+        <div class="input-group" >
+            <input type="text" placeholder="Encuentra tu producto aqui" class="form-control mb-3" [(ngModel)]="filterpost"
+            name="filterpost" >
         </div>
         <section id="carouselExampleControls" class="carousel slide car-slider mb-3" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -61,7 +62,7 @@
               <span class="visually-hidden">Next</span>
             </button>
         </section>
-        <app-product-card [cart] = "category"></app-product-card>
+        <app-product-card [cart] = "category" [search] ="filterpost" ></app-product-card>
     </div>
     <div class="saldo p-4">
         <h2>Saldo disponible s/.<span>150</span></h2>
