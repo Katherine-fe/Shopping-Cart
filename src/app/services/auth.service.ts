@@ -19,4 +19,8 @@ export class AuthService {
     return this.afa.signOut()
   }
 
+  hasUser(){
+    return this.afa.authState;
+  }
+
 }
