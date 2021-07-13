@@ -18,7 +18,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">{{products.data.name}}</h6>
                 <p class="card-text">Precio: S/.{{products.data.precio}}</p> <!-- {{ product.price | currency:'S/.' }} -->
                 <p class="card-text">Precio sugerido:{{products.data.sugerido}}</p>
-                <button class="btn btn-danger" >AGREGAR <i class="fas fa-shopping-cart"></i></button> <!-- (click)="addItemToCar(product)" -->
+                <button class="btn btn-danger" (click)="addCart(product)">AGREGAR <i class="fas fa-shopping-cart"></i></button> <!-- (click)="addItemToCar(product)" -->
             </div>
         </div>
 
