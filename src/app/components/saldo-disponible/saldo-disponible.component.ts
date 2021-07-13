@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-saldo-disponible',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaldoDisponibleComponent implements OnInit {
 
+  @Output() goBack:EventEmitter<any> = new EventEmitter()
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  goBackView(){
+    this.goBack.emit()
   }
 
 }
