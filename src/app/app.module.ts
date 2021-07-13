@@ -20,7 +20,7 @@ import { ClientTableComponent } from './components/client-table/client-table.com
 import { SaldoDisponibleComponent } from './components/saldo-disponible/saldo-disponible.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipe } from './pipes/filter.pipe';
-import { SearchPipe } from './pipes/search.pipe';
+
 
 
 @NgModule({
@@ -37,7 +37,6 @@ import { SearchPipe } from './pipes/search.pipe';
     ClientTableComponent,
     SaldoDisponibleComponent,
     FilterPipe,
-    SearchPipe,
   ],
   imports: [
     BrowserModule,
