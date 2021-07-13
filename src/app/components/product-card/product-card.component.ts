@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 import { Product } from 'src/app/models/products';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../services/cart.service';
@@ -9,7 +9,10 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
-  items!: Array<Product>;
+  
+  @Input() cart!: string;
+  @Output() filterCategoria : EventEmitter<any> = new EventEmitter();
+  
   products!: Product[];
   product: Product[];
 
@@ -21,7 +24,8 @@ export class ProductCardComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.getListProduct();    
+    this.getListProduct();  
+    this.filterCategoriaChild();
   }
 
   getListProduct(){
@@ -35,7 +39,9 @@ export class ProductCardComponent implements OnInit {
       })
     });
   }
-
+  filterCategoriaChild(){
+    this.filterCategoria.emit();
+  }
   addCart(product: any){
     console.log('va al carrito =)');
     this.cartService.addCart(product)

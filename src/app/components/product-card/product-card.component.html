@@ -1,6 +1,6 @@
 <div class="card mb-3" > <!-- style="width: 18rem;" --><!-- *ngFor="let product of items" -->
     
-    <div class="g-0 container" *ngFor="let products of products">
+    <div class="g-0 container" *ngFor="let products of products | filter : cart">
     
         <div class="col-md-4 image-quantity">
             <img [src]=" products.data.img" class="img-fluid rounded-start" style="width: 8rem" alt="..."> <!-- [src]="product.image" -->
@@ -11,7 +11,6 @@
                 <button class="btn btn-danger"><i class="fas fa-plus-circle"></i></button> <!-- (click)="plusOne(product)" -->  
             </div>
         </div>
-
         <div class="card-body" >
             <div class="col-md-8">    
                 <h5 class="card-title">{{products.data.categoria}}</h5> <!-- {{ product.name }} -->

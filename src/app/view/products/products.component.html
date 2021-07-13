@@ -8,40 +8,47 @@
             <div class="carousel-inner">
               <div class="carousel-item item-unit active">
                   <div class="flex-item">
-                      <div class="group-cat" >
+                      <div class="group-cat" (click)="filterCategoria('Aceites')">
                           <div class="circle">
                               <img src="../../../assets/img/aceite.png" class="d-flex" alt="...">
                             </div>
                             <p>Aceites</p>
                       </div>
-                      <div class="group-cat">
+                      <div class="group-cat"  (click)="filterCategoria('Conservas')">
                           <div class="circle">
                               <img src="../../../assets/img/conservas.png" class="d-flex" alt="...">
                           </div>
                           <p>Conservas</p>
                       </div>
-                      <div class="group-cat">
+                      <div class="group-cat"  (click)="filterCategoria('Detergentes')">
                           <div class="circle ">
                               <img src="../../../assets/img/detergente.png" class="d-flex" alt="...">
                           </div>
                           <p>Detergente</p>
                       </div>
-                      <div class="group-cat">
-                          <div class="circle">
-                              <img src="../../../assets/img/pastas.png" class="d-flex" alt="...">
-                          </div>
-                          <p>Pastas</p>
-                    </div>
+                   
                   </div>
               </div>
               <div class="carousel-item item-unit">
                   <div class="flex-item">
-                      <article class="group-cat">
+                      <div class="group-cat" (click)="filterCategoria('Jabones')">
                           <div class="circle">
                               <img src="../../../assets/img/jabon.png" class="d-flex" alt="...">
                           </div>
                           <p>Jabón</p>
-                      </article>
+                      </div>
+                      <div class="group-cat" (click)="filterCategoria('Pastas')" >
+                        <div class="circle">
+                            <img src="../../../assets/img/pastas.png" class="d-flex" alt="...">
+                        </div>
+                        <p>Pastas</p>
+                  </div>
+                      <div class="group-cat" (click)="filterCategoria('')">
+                        <div class="circle">
+                            <img src="../../../assets/img/otros.png" class="d-flex" alt="...">
+                        </div>
+                        <p>Todos</p>
+                    </div>
                   </div>
               </div>
             </div>
@@ -54,7 +61,7 @@
               <span class="visually-hidden">Next</span>
             </button>
         </section>
-        <app-product-card></app-product-card>
+        <app-product-card [cart] = "category"></app-product-card>
     </div>
     <div class="saldo p-4">
         <h2>Saldo disponible s/.<span>150</span></h2>
