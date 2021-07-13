@@ -17,30 +17,9 @@ export class ProductsComponent implements OnInit {
     
    }
 
-  ngOnInit(): void {
-
-  
+  ngOnInit(): void {  
 }
   
-
-
-  
-/*   productsFilter(typeF : string) {
-    this.productService.getProduct().subscribe((catsSnapshot) => {
-      this.products = [];
-      catsSnapshot.forEach((prod: any) => {
-        this.products.push({
-          id: prod.payload.doc.id,
-          data: prod.payload.doc.data()
-        });
-      })
-     const newProd = this.products.filter(omg => omg.data.categoria == typeF)
-      console.log(newProd)
-     return newProd ;
-      })
-    };
-     */
-
     filterCategoria( category : string) {
       this.category = category;
     }  
