@@ -1,3 +1,63 @@
 <app-nav-bar></app-nav-bar>
-<app-product-card></app-product-card>
+<section class="container">
+    <div class="row pt-3">
+        <div class="input-group">
+            <input type="text" placeholder="Encuentra tu producto aqui" class="form-control mb-3">
+        </div>
+        <section id="carouselExampleControls" class="carousel slide car-slider mb-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item item-unit active">
+                  <div class="flex-item">
+                      <div class="group-cat" >
+                          <div class="circle">
+                              <img src="../../../assets/img/aceite.png" class="d-flex" alt="...">
+                            </div>
+                            <p>Aceites</p>
+                      </div>
+                      <div class="group-cat">
+                          <div class="circle">
+                              <img src="../../../assets/img/conservas.png" class="d-flex" alt="...">
+                          </div>
+                          <p>Conservas</p>
+                      </div>
+                      <div class="group-cat">
+                          <div class="circle ">
+                              <img src="../../../assets/img/detergente.png" class="d-flex" alt="...">
+                          </div>
+                          <p>Detergente</p>
+                      </div>
+                      <div class="group-cat">
+                          <div class="circle">
+                              <img src="../../../assets/img/pastas.png" class="d-flex" alt="...">
+                          </div>
+                          <p>Pastas</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="carousel-item item-unit">
+                  <div class="flex-item">
+                      <article class="group-cat">
+                          <div class="circle">
+                              <img src="../../../assets/img/jabon.png" class="d-flex" alt="...">
+                          </div>
+                          <p>Jabón</p>
+                      </article>
+                  </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </section>
+        <app-product-card></app-product-card>
+    </div>
+    <div class="saldo p-4">
+        <h2>Saldo disponible s/.<span>150</span></h2>
+    </div>
+</section>
 

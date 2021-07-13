@@ -19,6 +19,7 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
 import { ClientTableComponent } from './components/client-table/client-table.component';
 import { SaldoDisponibleComponent } from './components/saldo-disponible/saldo-disponible.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ClientFormComponent,
     ClientTableComponent,
     SaldoDisponibleComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

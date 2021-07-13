@@ -9,6 +9,7 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
+  items!: Array<Product>;
   products!: Product[];
   product: Product[];
 
@@ -20,6 +21,10 @@ export class ProductCardComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.getListProduct();    
+  }
+
+  getListProduct(){
     this.productService.getProduct().subscribe((catsSnapshot) => {
       this.products = [];
       catsSnapshot.forEach((prod: any) => {
