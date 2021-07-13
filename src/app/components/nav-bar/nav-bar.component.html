@@ -22,11 +22,11 @@
       </div>
       <a *ngIf="show==false" class="navbar-brand" href="#" style="color: #FFFCFC; font-family: Rubik; font-weight: bold;font-size: 25px;"> NutriMarket </a>
      
-      <a *ngIf="show==false" class="navbar-brand" href="#">
+      <a *ngIf="show==false" routerLink="/cart" class="navbar-brand" href="#">
         <!-- <img src="../../../assets/carrito.svg" alt="" width="40" height="30"> -->
         <i class="fas fa-shopping-cart" style="color:white; width:2.5rem"></i>
         <span class=" top-0 start-100 translate-middle badge rounded-pill bg-light text-dark">
-          {{total}}</span>
+          {{total$ | async}}</span>
       </a>      
     </div>
 </nav>
