@@ -39,6 +39,7 @@ import { SaldoDisponibleComponent } from './components/saldo-disponible/saldo-di
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireStorageModule
