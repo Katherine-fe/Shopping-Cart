@@ -15,7 +15,7 @@ export class ProductCardComponent implements OnInit {
 
   constructor(  
     private productService: ProductService,
-    private cartService: CartService 
+    private cartService: CartService
   ) { 
       this.product = []
     }
