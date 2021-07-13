@@ -4,7 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth'
 import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
@@ -28,7 +30,10 @@ import { ModalComponent } from './components/modal/modal.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
