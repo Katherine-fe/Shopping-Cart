@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 import { Product } from 'src/app/models/products';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../services/cart.service';
@@ -10,8 +10,15 @@ import { CartService } from '../../services/cart.service';
 })
 export class ProductCardComponent implements OnInit {
   items!: Array<Product>;
-  products!: Product[];
+  products!: any;
+  
+  @Input() cart!: string;
+  @Output() filterCategoria : EventEmitter<any> = new EventEmitter();
+  
+  // products!: Product[];
   product: Product[];
+  orders: [] = [];
+  qty = 1;
 
   constructor(  
     private productService: ProductService,
@@ -21,7 +28,8 @@ export class ProductCardComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.getListProduct();    
+    this.getListProduct();  
+    this.filterCategoriaChild();
   }
 
   getListProduct(){
@@ -30,16 +38,43 @@ export class ProductCardComponent implements OnInit {
       catsSnapshot.forEach((prod: any) => {
         this.products.push({
           id: prod.payload.doc.id,
-          data: prod.payload.doc.data()
+          data: prod.payload.doc.data(),
+          qty: this.qty,
+          status: false
         });
       })
     });
   }
-
+  filterCategoriaChild(){
+    this.filterCategoria.emit();
+  }
   addCart(product: any){
-    console.log('va al carrito =)');
+    console.log(product);
     this.cartService.addCart(product)
   }
+
+  minus(id: string) {
+    const count = this.products.filter((obj: any) => obj.id == id);
+    if (count[0].qty > 1) {
+      this.products.filter((obj: any) => obj.id == id)[0].qty -= 1;
+    }
+  }
+  plus(id: string) {
+    this.products.filter((obj: any) => obj.id == id)[0].qty += 1;
+  }
+
+  add(product: Product) {
+    this.addCart(product)
+    this.products.filter((obj: any) => obj.id == product.id)[0].status = true;
+    // this.orders.push({
+    // });
+  }
+  delete(product: Product) {
+    this.products.filter((obj: any) => obj.id == product.id)[0].status = false;
+    this.products.filter((obj: any) => obj.id == product.id)[0].qty = 1;
+
+  }
+
 
 }
 

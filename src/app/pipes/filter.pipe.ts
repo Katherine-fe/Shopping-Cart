@@ -4,9 +4,11 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
-
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
-  }
-
+  transform(value: Array<any>, arg: string): Array<any> {
+    console.log(arg)
+    if(arg == ''){
+      return value
+    }
+    return value.filter(omg => omg.data.categoria == arg);   
+}
 }
