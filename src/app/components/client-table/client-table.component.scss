@@ -1,0 +1,28 @@
+@use '../../../styles.scss' as *;
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.simple-table{
+    font-family: 'Rubik';
+}
+.table-head{
+    background-color:#EE3038;
+    color: #FFFCFC ;
+
+}
+
+.btn-style{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    background-color: $redLight;
+    width: 60%;
+    border-radius: 50px;
+    border: 1px solid $primary;
+    &:hover{
+        background-color: $primary;
+    }
+}
