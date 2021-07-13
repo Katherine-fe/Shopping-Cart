@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/products';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-card',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
+  products!: Product[];
 
-  constructor() { }
+  constructor(  private productService: ProductService ) { }
 
   ngOnInit(): void {
+    this.productService.getProduct().subscribe((catsSnapshot) => {
+      this.products = [];
+      catsSnapshot.forEach((prod: any) => {
+        this.products.push({
+          id: prod.payload.doc.id,
+          data: prod.payload.doc.data()
+        });
+      })
+    });
+  }
   }
 
-}
+
