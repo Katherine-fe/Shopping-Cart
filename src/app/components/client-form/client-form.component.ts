@@ -20,6 +20,9 @@ export class ClientFormComponent implements OnInit {
       codWorker: new FormControl('', [Validators.required, Validators.maxLength(8)]),
       codZone: new FormControl('', [Validators.required])
     })
+    // this.radioButton = this.fb.group({
+    //   option: new FormControl(null)
+    // })
   }
 
   ngOnInit(): void {
@@ -28,6 +31,7 @@ export class ClientFormComponent implements OnInit {
   }
 
   toggleVisibility(value: any){
+    console.log(value);
     this.theCheckedBox= value;
   }
 

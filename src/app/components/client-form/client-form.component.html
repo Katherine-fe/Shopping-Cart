@@ -1,18 +1,20 @@
 <section class="checkbox">
+ 
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="radioParami" id="radioParami"
-         [checked]="theCheckedBox" >
+        <input class="form-check-input" type="radio" name="radioOption" value="paraMi"
+        > <!--[checked]="theCheckedBox"-->
         <label class="form-check-label" for="radioParami">
         Para mí
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="radioOtroC" value="false"
-        [(ngModel)]="theCheckedBox" (change)="toggleVisibility($event)">
+        <input class="form-check-input" type="radio" name="radioOption" value="otroCliente"
+          > <!--[(ngModel)]="theCheckedBox" (change)="toggleVisibility($event)"-->
         <label class="form-check-label" for="radioOtroC">
         Otro cliente
         </label>
     </div>
+    
 </section>
 
 <section *ngIf="show" id="para-mi">
