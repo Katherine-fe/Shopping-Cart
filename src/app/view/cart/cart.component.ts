@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../../models/products';
 import { CartService } from '../../services/cart.service';
@@ -15,7 +16,8 @@ export class CartComponent implements OnInit {
   products$: Observable<Product[]>;
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router,
   ) { 
     this.products$ = this.cartService.cart$;
   }
@@ -23,6 +25,9 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goBack(){}
+  goBack(){
+    console.log('go back');
+    this.router.navigate(['./products'])
+  }
 
 }
