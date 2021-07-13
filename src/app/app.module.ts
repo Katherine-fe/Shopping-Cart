@@ -19,6 +19,7 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
 import { ClientTableComponent } from './components/client-table/client-table.component';
 import { SaldoDisponibleComponent } from './components/saldo-disponible/saldo-disponible.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
