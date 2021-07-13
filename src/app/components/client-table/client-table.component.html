@@ -10,28 +10,16 @@
       </tr>
     </thead>
     <tbody>
-        <tr> <!--*ngFor="let product of products | paginate: { itemsPerPage: 5, currentPage: p }; index as i"-->
-            <td>Juana Parra</td>
-            <td>76757489</td>
-            <td>07071</td>
+        <tr *ngFor="let client of clients"> <!--*ngFor="let product of products | paginate: { itemsPerPage: 5, currentPage: p }; index as i"-->
+            <td>{{client.data.nombre}}</td>
+            <td>{{client.data.documento}}</td>
+            <td>{{client.data.codigoZona}}</td>
             <td>
                 <button class="btn-edit"><img src="../assets/icon/edit.svg"></button>
             </td>
             <td>
-                <button class="btn-delete"><img src="../assets/icon/trash.svg"></button>
+                <button class="btn-delete" (click)="deleteClient(client)"><img src="../assets/icon/trash.svg"></button>
             </td>
-        </tr>
-        <tr> <!--*ngFor="let product of products | paginate: { itemsPerPage: 5, currentPage: p }; index as i"-->
-            <td>Kevin Aguirre Cieza</td>
-            <td>76859752</td>
-            <td>07080</td>
-            <td>
-                <button class="btn-edit"><img src="../assets/icon/edit.svg"></button>
-            </td>
-            <td>
-                <button class="btn-delete"><img src="../assets/icon/trash.svg"></button>
-            </td>
-        </tr>
     </tbody>
   </table>
   <button type="button" class="btn btn-primary btn-style">FINALIZAR PEDIDO</button>

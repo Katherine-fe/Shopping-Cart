@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-client-table',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientTableComponent implements OnInit {
 
-  constructor() { }
+  @Input() clients: any[] = [];
+  constructor(private clientService: ClientService) { }
 
   ngOnInit(): void {
   }
 
+  deleteClient(client: any){
+    this.clientService.deleteClient(client.id)
+  }
 }

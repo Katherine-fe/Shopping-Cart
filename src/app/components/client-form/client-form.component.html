@@ -18,41 +18,43 @@
 </section>
 
 <section *ngIf="show" id="para-mi">
-    <form [formGroup]="clientForm" (ngSubmit)="sendClient()">
+    <form [formGroup]="clientForm" (ngSubmit)="sendClient(clientForm.value)">
+        <input type="hidden" formControlName="id">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nombre</label>
-            <input type="text" class="form-control" formControlName="client" id="clientName" aria-describedby="Nombre">
+            <input type="text" class="form-control" formControlName="nombre" id="clientName" aria-describedby="Nombre">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Código de trabajador</label>
-            <input type="text" class="form-control" formControlName="codWorker" id="codWorker">
+            <input type="text" class="form-control" formControlName="documento" id="codWorker">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Código de zona</label>
-            <input type="text" class="form-control" formControlName="codZone" id="codZone">
+            <input type="text" class="form-control" formControlName="codigoZona" id="codZone">
         </div>
         <span>
         <img src="../../assets/Icons/i.png">Consulta el codigo de zona
         </span>
-        <button type="submit" class="btn btn-primary btnAgregar" [disabled]="!clientForm.valid">AGREGAR CLIENTE</button>
+        <button type="submit" class="btn btn-primary btnAgregar" >AGREGAR CLIENTE</button>
     </form>
 </section>
 
 <section id="otro-cliente" *ngIf="!show">
-    <form [formGroup]="clientForm" (ngSubmit)="sendClient()">
+    <form [formGroup]="clientForm" (ngSubmit)="sendClient(clientForm.value)">
+        <input type="hidden" formControlName="id">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nombre Eunice</label>
-            <input type="text" class="form-control" formControlName="client" id="clientName" aria-describedby="Nombre">
+            <input type="text" class="form-control" formControlName="nombre" id="clientName" aria-describedby="Nombre">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">DNI</label>
-            <input type="text" class="form-control" formControlName="codWorker" id="codWorker">
+            <input type="text" class="form-control" formControlName="documento" id="codWorker">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Código de zona</label>
-            <input type="text" class="form-control" formControlName="codZone" id="codZone">
+            <input type="text" class="form-control" formControlName="codigoZona" id="codZone">
         </div>
         
-        <button type="submit" class="btn btn-primary btnAgregar" [disabled]="!clientForm.valid">AGREGAR CLIENTE</button>
+        <button type="submit" class="btn btn-primary btnAgregar" >AGREGAR CLIENTE</button>
     </form>
 </section>

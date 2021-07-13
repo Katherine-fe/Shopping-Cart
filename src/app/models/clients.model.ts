@@ -1,4 +1,4 @@
-export interface Clients{
+export interface ClientsModel{
     id: string,
     documento:string,
     nombre: string,
