@@ -1,4 +1,5 @@
 import { Component, OnInit , Input,EventEmitter,Output} from '@angular/core';
+import { Router } from '@angular/router';
 import { ClientService } from 'src/app/services/client.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class ModalComponent implements OnInit {
   @Input() modal: boolean= false
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private clientService: ClientService) { }
+  constructor(private clientService: ClientService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.closeModalP()
@@ -27,5 +29,7 @@ export class ModalComponent implements OnInit {
   closeModalP(){
     this.closeModal.emit(false)
   }
-
+  closeModalAceptar(){
+    this.router.navigate(['./login'])
+  }
 }

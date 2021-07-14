@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ClientService } from 'src/app/services/client.service';
 
 @Component({
@@ -10,7 +11,8 @@ export class ClientComponent implements OnInit {
 
   public clients: object[] =[];
 
-  constructor(private clientService: ClientService) {
+  constructor(private clientService: ClientService,
+    private router: Router) {
    }
 
   ngOnInit(): void {
@@ -25,6 +27,9 @@ export class ClientComponent implements OnInit {
         this.clients.push({id: id, data: data})
       })
     })
+  }
+  goBackView() {
+    this.router.navigate(['./cart'])
   }
 }
 
