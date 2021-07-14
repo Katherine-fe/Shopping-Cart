@@ -64,6 +64,8 @@ export class ProductCardComponent implements OnInit {
     this.products.filter((obj: any) => obj.id == product.id)[0].status = true;
   }
   delete(product: Product) {
+    console.log(this.product);
+    
     this.products.filter((obj: any) => obj.id == product.id)[0].status = false;
     this.products.filter((obj: any) => obj.id == product.id)[0].qty = 1;
     this.cartService.addCart(product, true);
