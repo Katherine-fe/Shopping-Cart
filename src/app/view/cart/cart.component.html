@@ -1,5 +1,5 @@
 <app-nav-bar></app-nav-bar>
-<app-saldo-disponible (goBack)="goBack()"></app-saldo-disponible>
+<app-saldo-disponible (goBack)="goBack()" [totalDescuento]="totalDescuento"></app-saldo-disponible>
 <div *ngIf="(products$ | async) as products">
     <div *ngIf="products.length === 0" class="alert alert-secondary" role="alert">
         El carrito está vacío. 
@@ -32,7 +32,7 @@
         <div class="row">
             <h5>Monto Total S/. {{total}}</h5>
             <h5 style="color: red">Descuento de colaborador -S/. {{descuento | number: '.0-2'}}</h5>
-            <h5>Total a pagar S/. {{total - descuento}}</h5>
+            <h5>Total a pagar S/. {{totalDescuento}}</h5>
             <button class="btn btn-danger" routerLink="/client" >Continuar</button>
         </div>
     </div>

@@ -11,12 +11,12 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-
   modal: boolean = false;
   products: any;
   product: Product[];
   total: number = 0;
   descuento: number = 0;
+  totalDescuento: number = 0;
   products$: Observable<Product[]>;
 
   constructor(
@@ -34,6 +34,7 @@ export class CartComponent implements OnInit {
   montoTotal() {
     this.total = this.cartService.products.reduce((acc, obj) => acc + obj.data.precio * obj.qty, 0);
     this.descuento = this.total * 0.2;
+    this.totalDescuento = this.total - this.descuento;
   }
 
   goBack() {
