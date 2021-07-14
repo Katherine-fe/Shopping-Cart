@@ -1,38 +1,37 @@
 <app-nav-bar></app-nav-bar>
-<app-saldo-disponible
-  (goBack)="goBack()"  >
-</app-saldo-disponible>
-
-<div *ngIf="(products$ | async) as products">
-
-    <div *ngIf="products.length === 0" class="alert alert-secondary" role="alert">
-        El carrito está vacío. 
-        <br>
-        Agreguemos productos del catálogo.
-        <br>
-        Volvamos.
-    </div>
-    
-    <div class="g-0 container" *ngFor="let product of products">
-        <div class="col-md-4 image-quantity">
-            <img [src]=" product.data.img" class="img-fluid rounded-start" style="width: 4rem" alt="...">
-            <div class="quantity">
-                <button class="btn btn-danger" ><i class="fas fa-minus-circle"></i></button> <!-- (click)="minus(products.id)" -->
-                <p class="card-text">{{product.qty}}</p>
-                <button class="btn btn-danger" ><i class="fas fa-plus-circle"></i></button> <!-- (click)="plus(products.id)" -->
+<section class="container">
+    <div class="row">
+        <app-saldo-disponible (goBack)="goBack()"></app-saldo-disponible>
+        <div *ngIf="(products$ | async) as products">
+            <div *ngIf="products.length === 0" class="alert alert-secondary" role="alert">
+                El carrito está vacío. 
+                <br>
+                Agreguemos productos del catálogo.
+                <br>
+                Volvamos.
+            </div>
+            
+            <div class="g-0 container" *ngFor="let product of products">
+                <div class="col-md-4 image-quantity">
+                    <img [src]=" product.data.img" class="img-fluid rounded-start" style="width: 4rem" alt="...">
+                    <div class="quantity">
+                        <button class="btn btn-danger" ><i class="fas fa-minus-circle"></i></button> <!-- (click)="minus(products.id)" -->
+                        <p class="card-text">{{product.qty}}</p>
+                        <button class="btn btn-danger" ><i class="fas fa-plus-circle"></i></button> <!-- (click)="plus(products.id)" -->
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-8">  
+                        <h5 class="card-title">{{product.data.categoria}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{product.data.name}}</h6>
+                        <p class="card-text">Cómpralo a: S/.{{product.data.precio}}</p> 
+                        <p class="card-text">Véndelo a:S/.{{product.data.sugerido}}</p>
+                        <p class="card-text">Ganancia:S/.{{product.data.precio - product.data.sugerido | number: '.0-2'}}</p>
+                    </div>
+                </div>
+                <img src="../assets/icon/trash.svg" > <!-- (click)="openModalDelete(client)" -->
             </div>
         </div>
-        <div class="card-body" >
-            <div class="col-md-8">  
-                <h5 class="card-title">{{product.data.categoria}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{product.data.name}}</h6>
-                <p class="card-text">Cómpralo a: S/.{{product.data.precio}}</p> 
-                <p class="card-text">Véndelo a:S/.{{product.data.sugerido}}</p>
-                <p class="card-text">Ganancia:S/.{{product.data.precio - product.data.sugerido | number: '.0-2'}}</p>
-            </div>
-        </div>
-        <img src="../assets/icon/trash.svg" > <!-- (click)="openModalDelete(client)" -->
     </div>
-   
-</div>
+</section>
 
