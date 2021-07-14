@@ -14,7 +14,7 @@ export class FilterPipe implements PipeTransform {
     } 
    if(arg == '') {
       return value
-    }  
-    return value.filter(omg => omg.data.categoria == arg);   
-}
+    }
+    return value.filter(omg => omg.data.categoria == arg);
+  }
 }

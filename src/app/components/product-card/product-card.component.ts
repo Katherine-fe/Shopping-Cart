@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../models/products';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../services/cart.service';
@@ -13,27 +13,25 @@ export class ProductCardComponent implements OnInit {
   products!: any;
   @Input() search!: string;
   @Input() cart!: string;
-  @Output() filterCategory : EventEmitter<any> = new EventEmitter();
-  
-  // products!: Product[];
+  @Output() filterCategory: EventEmitter<any> = new EventEmitter();
+
   product: Product[];
   orders: [] = [];
-  /* listProduct: Array<Product>; */
   qty = 1;
 
-  constructor(  
+  constructor(
     private productService: ProductService,
     private cartService: CartService
-  ) { 
-      this.product = []
-    }
+  ) {
+    this.product = []
+  }
 
   ngOnInit(): void {
-    this.getListProduct();  
+    this.getListProduct();
     this.filterCategoryChild();
   }
 
-  getListProduct(){
+  getListProduct() {
     this.productService.getProduct().subscribe((catsSnapshot) => {
       this.products = [];
       catsSnapshot.forEach((prod: any) => {
@@ -46,12 +44,11 @@ export class ProductCardComponent implements OnInit {
       })
     });
   }
-  filterCategoryChild(){
+  filterCategoryChild() {
     this.filterCategory.emit();
   }
-  addCart(product: any){
-    console.log(product);
-    this.cartService.addCart(product)
+  addCart(product: any) {
+    this.cartService.addCart(product, false);
   }
 
   minus(id: string) {
@@ -67,12 +64,11 @@ export class ProductCardComponent implements OnInit {
   add(product: Product) {
     this.addCart(product)
     this.products.filter((obj: any) => obj.id == product.id)[0].status = true;
-    // this.orders.push({
-    // });
   }
   delete(product: Product) {
     this.products.filter((obj: any) => obj.id == product.id)[0].status = false;
     this.products.filter((obj: any) => obj.id == product.id)[0].qty = 1;
+    this.cartService.addCart(product, true);
 
   }
 
