@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipe } from './pipes/filter.pipe';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireStorageModule,

@@ -1,4 +1,4 @@
-  <section>
+  <section style="display: none;">
         <div class="modal3">
             <div class="overlay"></div>
             <div class="modal_content">
@@ -15,7 +15,7 @@
         </div>
 </section>  
 
- <section>
+ <section *ngIf="visibleDeleteClient"> 
     <div class="modal3">
         <div class="overlay"></div>
         <div class="modal_content">
@@ -23,8 +23,8 @@
                 <div class="form">
                     <h5 class="nameDelete" id="modal-delete">Se removerá un ítem de tu  lista de clientes</h5>
                   <div class="cancel-save">
-                    <button type='button' class="save">Aceptar</button>
-                    <button type='button' class="cancel">Cancelar</button>
+                    <button type='button' class="save" (click)="deleteClient()">Aceptar</button>
+                    <button type='button' class="cancel" (click)="closeModalDelete()">Cancelar</button>
                   </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
     </div>
 </section> 
 
- <section >
+ <section style="display: none;" >
     <div class="modal3">
         <div class="overlay"></div>
         <div class="modal_content">

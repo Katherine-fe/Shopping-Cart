@@ -1,6 +1,6 @@
 <div class="card mb-3" > <!-- style="width: 18rem;" --><!-- *ngFor="let product of items" -->
     
-    <div class="g-0 container" *ngFor="let products of products | filter : cart">
+    <div class="g-0 container" *ngFor="let products of products | filter : search : cart " >
     
         <div class="col-md-4 image-quantity">
             <img [src]=" products.data.img" class="img-fluid rounded-start" style="width: 8rem" alt="..."> <!-- [src]="product.image" -->
