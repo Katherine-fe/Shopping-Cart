@@ -1,9 +1,7 @@
-<div class="card mb-3" > 
-    
-    <div class="g-0 container" *ngFor="let products of products | filter : search : cart " >
-    
+<div class="card mb-3" >     
+    <div class="g-0 container" *ngFor="let products of products | filter : search : cart " >    
         <div class="col-md-4 image-quantity">
-            <img [src]=" products.data.img" class="img-fluid rounded-start" style="width: 4rem" alt="..."> 
+            <img [src]=" products.data.img" class="img-fluid rounded-start" style="width: 8rem" alt="..."> 
             
             <div class="quantity">
                 <button class="btn btn-danger" (click)="minus(products.id)"><i class="fas fa-minus-circle"></i></button> 
