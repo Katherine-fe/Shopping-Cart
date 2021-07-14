@@ -12,7 +12,6 @@ import { Observable } from 'rxjs';
 })
 export class NavBarComponent implements OnInit {
   show:boolean = false;
-  // total = 0;
   total$: Observable<number>;
 
   constructor(
@@ -20,17 +19,17 @@ export class NavBarComponent implements OnInit {
     private router: Router,
     private cartService: CartService
   ) { 
-    // cuando el elemento no se use, se desubscribe con el pipe ASYNC
-    // así se evita flujo o pérdidas de memoria = mejor performance
     this.total$ = this.cartService.cart$
     .pipe(
-      map(products => products.length)
+      map(products => {
+        // console.log(products);
+       const array= products.map((elem)=>{
+          return elem.qty
+        })
+        // console.log(array);
+        return array.reduce((accumulator, currentValue) => accumulator + currentValue,0)
+      })
     )
-    // .subscribe(total =>{ 
-    //   // console.log(products); 
-    //   this.total = total;
-    // })
-
   }
 
   ngOnInit(): void {

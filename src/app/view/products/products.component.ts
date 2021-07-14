@@ -14,18 +14,12 @@ export class ProductsComponent implements OnInit {
   category : string = "";
   filterpost : string = "";
   constructor(private productService: ProductService) {
-    
-   }
+  }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {  }
+
+  filterCategory( category : string) {
+    this.category = category;
+  }  
 
 }
-  
-    filterCategoria( category : string) {
-      this.category = category;
-    }  
-/*     buscador(filterpost : string){
-      console.log(filterpost)
-      this.filterpost = filterpost
-    } */
-  }
