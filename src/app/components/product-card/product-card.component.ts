@@ -11,7 +11,7 @@ import { CartService } from '../../services/cart.service';
 export class ProductCardComponent implements OnInit {
   items!: Array<Product>;
   products!: any;
-  
+  @Input() search!: string;
   @Input() cart!: string;
   @Output() filterCategory : EventEmitter<any> = new EventEmitter();
   
