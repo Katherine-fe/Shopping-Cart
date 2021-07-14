@@ -12,23 +12,31 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  modal: boolean= false;
+  modal: boolean = false;
   products: any;
   product: Product[];
+  total: number = 0;
+  descuento: number = 0;
   products$: Observable<Product[]>;
-  
+
   constructor(
     private cartService: CartService,
     private router: Router,
-  ) { 
+  ) {
     this.product = []
     this.products$ = this.cartService.cart$;
   }
 
   ngOnInit(): void {
+    this.montoTotal();
   }
 
-  goBack(){
+  montoTotal() {
+    this.total = this.cartService.products.reduce((acc, obj) => acc + obj.data.precio * obj.qty, 0);
+    this.descuento = this.total * 0.2;
+  }
+
+  goBack() {
     this.router.navigate(['./products'])
   }
 
