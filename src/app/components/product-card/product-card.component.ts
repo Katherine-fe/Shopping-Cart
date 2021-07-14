@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/models/products';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../services/cart.service';
@@ -13,26 +13,26 @@ export class ProductCardComponent implements OnInit {
   products!: any;
   @Input() search!: string;
   @Input() cart!: string;
-  @Output() filterCategoria : EventEmitter<any> = new EventEmitter();
-  
+  @Output() filterCategoria: EventEmitter<any> = new EventEmitter();
+
   // products!: Product[];
   product: Product[];
   orders: [] = [];
   qty = 1;
 
-  constructor(  
+  constructor(
     private productService: ProductService,
     private cartService: CartService
-  ) { 
-      this.product = []
-    }
+  ) {
+    this.product = []
+  }
 
   ngOnInit(): void {
-    this.getListProduct();  
+    this.getListProduct();
     this.filterCategoriaChild();
   }
 
-  getListProduct(){
+  getListProduct() {
     this.productService.getProduct().subscribe((catsSnapshot) => {
       this.products = [];
       catsSnapshot.forEach((prod: any) => {
@@ -45,11 +45,10 @@ export class ProductCardComponent implements OnInit {
       })
     });
   }
-  filterCategoriaChild(){
+  filterCategoriaChild() {
     this.filterCategoria.emit();
   }
-  addCart(product: any){
-    console.log(product);
+  addCart(product: any) {
     this.cartService.addCart(product)
   }
 

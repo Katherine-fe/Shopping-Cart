@@ -7,15 +7,16 @@ import { Product } from '../models/products';
 })
 export class CartService {
 
-  private products: Product[]= [];
+  private products: Product[] = [];
   private cart = new BehaviorSubject<Product[]>([]);
 
   cart$ = this.cart.asObservable();
 
   constructor() { }
 
-  addCart(product: Product){
+  addCart(product: Product) {
     this.products = [...this.products, product];
+    console.log(this.products);
     this.cart.next(this.products)
   }
 

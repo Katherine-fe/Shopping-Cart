@@ -16,7 +16,7 @@
                 <h5 class="card-title">{{products.data.categoria}}</h5> <!-- {{ product.name }} -->
                 <h6 class="card-subtitle mb-2 text-muted">{{products.data.name}}</h6>
                 <p class="card-text">Precio: S/.{{products.data.precio}}</p> <!-- {{ product.price | currency:'S/.' }} -->
-                <p class="card-text">Precio sugerido:{{products.data.sugerido}}</p>
+                <p class="card-text">Precio sugerido: S/. {{products.data.sugerido}}</p>
                 <button *ngIf="!products.status" class="btn btn-danger" (click)="add(products)">AGREGAR <i class="fas fa-shopping-cart"></i></button>
                 <button *ngIf="products.status" class="btn btn-danger" (click)="delete(products)">QUITAR <i class="fas fas fa-trash-alt"></i></button>
                 <!-- <button class="btn btn-danger" (click)="addCart(product)">AGREGAR <i class="fas fa-shopping-cart"></i></button> -->
