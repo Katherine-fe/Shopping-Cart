@@ -41,4 +41,15 @@ export class CartComponent implements OnInit {
     this.cartService.addCart(product, true);
   }
 
+  plus(id: string) {
+    console.log(this.cartService.products)
+    this.cartService.products.filter((obj: any) => obj.id == id)[0].qty += 1;
+  }
+  minus(id: string) {
+    console.log(this.cartService.products)
+    const count = this.cartService.products.filter((obj: any) => obj.id == id);
+    if (count[0].qty > 1) {
+      this.cartService.products.filter((obj: any) => obj.id == id)[0].qty -= 1;
+    }
+  }
 }
