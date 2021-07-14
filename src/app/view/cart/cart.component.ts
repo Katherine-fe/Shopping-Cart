@@ -32,21 +32,14 @@ export class CartComponent implements OnInit {
     this.router.navigate(['./products'])
   }
 
-  delete(product: Product) {
-    console.log(product);
-    console.log(this.products$);
-    
-    this.products.filter((obj: any) => obj.id == product.id)[0].status = false;
-    this.products.filter((obj: any) => obj.id == product.id)[0].qty = 1;
-    this.cartService.addCart(product, true);
+  delete(id: any) {
+    this.cartService.removeItem(id);
   }
 
   plus(id: string) {
-    console.log(this.cartService.products)
     this.cartService.products.filter((obj: any) => obj.id == id)[0].qty += 1;
   }
   minus(id: string) {
-    console.log(this.cartService.products)
     const count = this.cartService.products.filter((obj: any) => obj.id == id);
     if (count[0].qty > 1) {
       this.cartService.products.filter((obj: any) => obj.id == id)[0].qty -= 1;

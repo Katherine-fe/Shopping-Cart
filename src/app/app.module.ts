@@ -22,7 +22,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipe } from './pipes/filter.pipe';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

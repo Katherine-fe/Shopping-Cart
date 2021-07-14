@@ -13,7 +13,7 @@ export class SaldoDisponibleComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
   goBackView(){
     this.goBack.emit()
   }

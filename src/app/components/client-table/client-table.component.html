@@ -1,8 +1,7 @@
 <app-modal [client]="client" [visibleDeleteClient]="show" 
 (closeModal)=closeModalP($event)></app-modal>
 <app-modal [visibleFinalizado]="show2" (closeModal)=closeModalP($event)></app-modal>
-<!-- 
- (closeModal)=closeModalDelete($event)  -->
+
 <table class="table simple-table">
     <thead class="table-head">
       <tr>
@@ -14,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let client of clients"> <!--*ngFor="let product of products | paginate: { itemsPerPage: 5, currentPage: p }; index as i"-->
+        <tr *ngFor="let client of clients"> 
             <td>{{client.data.nombre}}</td>
             <td>{{client.data.documento}}</td>
             <td>{{client.data.codigoZona}}</td>
@@ -25,5 +24,5 @@
                 <img src="../assets/icon/trash.svg" (click)="openModalDelete(client)">
             </td>
     </tbody>
-  </table>
-  <button type="button" class="btn btn-primary btn-style" (click)="openModalFinalizado()">FINALIZAR PEDIDO</button>
+</table>
+<button type="button" class="btn btn-primary btn-style" (click)="openModalFinalizado()">FINALIZAR PEDIDO</button>

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 import { ClientsModel } from '../models/clients.model';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,14 +19,9 @@ export class ClientService {
   }
 
   public getClients(){
-    return this.firestore.collection('clients', ref => ref.orderBy('nombre','desc')).snapshotChanges();
-
-    // return this.firestore.collection('clients', ref => ref.orderBy('fecha', 'desc'));
+    return this.firestore.collection('clients', ref => ref.orderBy('nombre','asc')).snapshotChanges();
   }
 
-//   return this.afs.collection('viewings', ref => 
-// ref.orderBy('preferred_time','desc'))
-// );
 
   public updateClient(documentId: string, data: ClientsModel){
     return this.firestore.collection('clients').doc(documentId).set(data);
