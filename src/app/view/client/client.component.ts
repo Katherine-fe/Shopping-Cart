@@ -18,7 +18,11 @@ export class ClientComponent implements OnInit {
 
   ngOnInit(): void {
     //  this.clientService.getClients().subscribe((res) => console.log(res));
+    this.getAllClients()
     
+  }
+
+  getAllClients(){
     this.clientService.getClients().subscribe((clientsSnapshot) => {
       this.clients= [];
       clientsSnapshot.forEach((clientData) => {
@@ -26,7 +30,6 @@ export class ClientComponent implements OnInit {
         const data = clientData.payload.doc.data() //objeto
         this.clients.push({id: id, data: data})
         console.log(this.clients);
-        
       })
     })
   }

@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .formClient{
     display: flex;
     flex-direction: column;
@@ -27,24 +29,25 @@ span{
     font-weight: lighter;
 }
 
-.btnAgregar{
-    background-color: #EE3038;
-    align-self: center;
-    margin-top: 18px;
-    margin-bottom: 18px;
-    border-radius: 50px;
-    width: 55%;
-}
-
-// .btn-style{
-//     margin-left: 20%;
-//     margin-right: 20%;
-//     margin-top: 0.8rem;
-//     background-color:#EE3038;
-//     width: 55%;
+// .btnAgregar{
+//     background-color: #EE3038;
+//     align-self: center;
+//     margin-top: 18px;
+//     margin-bottom: 18px;
 //     border-radius: 50px;
-//     border: 1px solid $primary;
-//     &:hover{
-//         background-color: $primary;
-//     }
+//     width: 55%;
 // }
+
+.btn-style{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    background-color:#EE3038;
+    width: 80%;
+    border-radius: 50px;
+    border: 1px solid $primary;
+    &:hover{
+        background-color: $primary;
+    }
+}
