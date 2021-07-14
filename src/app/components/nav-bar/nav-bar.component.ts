@@ -22,13 +22,11 @@ export class NavBarComponent implements OnInit {
     this.total$ = this.cartService.cart$
       .pipe(
         map(products => {
-          console.log(products);
-
+          // console.log(products);
           const array = products.map((elem) => {
             return elem.qty
           })
-          console.log(array);
-
+          // console.log(array);
           return array.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
         })
       )

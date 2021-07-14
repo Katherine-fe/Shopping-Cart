@@ -1,4 +1,4 @@
-  <section style="display: none;">
+  <section *ngIf="modal">
         <div class="modal3">
             <div class="overlay"></div>
             <div class="modal_content">
@@ -24,7 +24,7 @@
                     <h5 class="nameDelete" id="modal-delete">Se removerá un ítem de tu  lista de clientes</h5>
                   <div class="cancel-save">
                     <button type='button' class="save" (click)="deleteClient()">Aceptar</button>
-                    <button type='button' class="cancel" (click)="closeModalDelete()">Cancelar</button>
+                    <button type='button' class="cancel" (click)="closeModalP()">Cancelar</button>
                   </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
     </div>
 </section> 
 
- <section style="display: none;" >
+ <section *ngIf="visibleFinalizado" >
     <div class="modal3">
         <div class="overlay"></div>
         <div class="modal_content">
@@ -41,7 +41,7 @@
                 <div class="form">
                     <h5 class="nameDelete" id="modal-delete">Tu pedido ha sido registrado exitosamente y será descontado en tu próxima planilla.</h5>
                   <div class="cancel-save">
-                    <button type='button' class="save">Aceptar</button>
+                    <button type='button' class="save" (click)="closeModalP()">Aceptar</button>
                   </div>
                 </div>
             </div>

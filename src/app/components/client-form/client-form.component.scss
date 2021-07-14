@@ -1,27 +1,41 @@
-@import "../../../styles.scss";
+@use '../../../styles.scss' as *;
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
 
 .formClient{
     display: flex;
     flex-direction: column;
 }
 
+a{
+    color: black;
+}
 
 .checkbox{
     display: flex;
     justify-content: space-around;
     font-family: 'Rubik';
-    padding: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    // padding: 5%;
 }
 
 #para-mi, #otro-cliente{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    // width: 0%;
     align-items: center;
     margin-left: 30px;
-    // justify-content: center;
     font-family: 'Rubik';
     font-weight: bold;
+}
+
+input{
+    width: 100%;
 }
 
 span{
@@ -44,10 +58,13 @@ span{
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
     background-color:#EE3038;
-    width: 80%;
+    width: 60%;
     border-radius: 50px;
     border: 1px solid $primary;
     &:hover{
+        background-color: $primary;
+    }
+    &:disabled{
         background-color: $primary;
     }
 }
