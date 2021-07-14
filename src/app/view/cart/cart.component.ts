@@ -11,8 +11,7 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-
-  // products: Product[] = [];
+   products!: any; 
   products$: Observable<Product[]>;
 
   constructor(
@@ -29,5 +28,15 @@ export class CartComponent implements OnInit {
     console.log('go back');
     this.router.navigate(['./products'])
   }
-
+  plus(id: string) {
+    console.log(this.cartService.products)
+    this.cartService.products.filter((obj: any) => obj.id == id)[0].qty += 1;
+  }
+  minus(id: string) {
+    console.log(this.cartService.products)
+    const count = this.cartService.products.filter((obj: any) => obj.id == id);
+    if (count[0].qty > 1) {
+      this.cartService.products.filter((obj: any) => obj.id == id)[0].qty -= 1;
+    }
+  }
 }
