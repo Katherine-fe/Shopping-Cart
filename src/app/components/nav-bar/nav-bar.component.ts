@@ -32,6 +32,7 @@ export class NavBarComponent implements OnInit {
           return array.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
         })
       )
+
   }
 
   ngOnInit(): void {
