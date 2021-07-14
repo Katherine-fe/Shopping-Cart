@@ -1,11 +1,12 @@
 export interface Product {
-  id: string;
-  data: {
-    precio: string;
-    categoria: string;
-    marca: string;
-    name: string;
-    sugerido: string;
-    img: string;
-  };
+    id: string;
+    data: {
+      precio: number;
+      categoria: string;
+      marca: string;
+      name: string;
+      sugerido: number;
+      img: string;
+    };
+    qty:number
 }

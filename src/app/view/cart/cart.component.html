@@ -11,11 +11,18 @@
         <br>
         Volvamos.
     </div>
-    <ul>
+    <!-- <ul>
         <li *ngFor="let product of products">
-            Nombre producto
+            {{product.data.categoria}}
         </li>
-    </ul>
+    </ul> -->
+    <div *ngFor="let product of products">
+        <h5 class="card-title">{{product.data.categoria}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{product.data.name}}</h6>
+        <p class="card-text">Cómpralo a: S/.{{product.data.precio}}</p> 
+        <p class="card-text">Véndelo a:S/.{{product.data.sugerido}}</p>
+        <p class="card-text">Ganancia:S/.{{product.data.precio - product.data.sugerido}}</p>
+    </div>
 </div>
 
 <!-- <ul>

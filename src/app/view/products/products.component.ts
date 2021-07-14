@@ -41,7 +41,7 @@ export class ProductsComponent implements OnInit {
     };
      */
 
-    filterCategoria( category : string) {
+    filterCategory( category : string) {
       this.category = category;
     }  
   }
