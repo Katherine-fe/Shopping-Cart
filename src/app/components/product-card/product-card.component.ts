@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Product } from 'src/app/models/products';
+import { Product } from '../../models/products';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../services/cart.service';
 
@@ -13,11 +13,12 @@ export class ProductCardComponent implements OnInit {
   products!: any;
   @Input() search!: string;
   @Input() cart!: string;
-  @Output() filterCategoria: EventEmitter<any> = new EventEmitter();
+  @Output() filterCategory: EventEmitter<any> = new EventEmitter();
 
   // products!: Product[];
   product: Product[];
   orders: [] = [];
+  /* listProduct: Array<Product>; */
   qty = 1;
 
   constructor(
@@ -29,7 +30,7 @@ export class ProductCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getListProduct();
-    this.filterCategoriaChild();
+    this.filterCategoryChild();
   }
 
   getListProduct() {
@@ -45,8 +46,8 @@ export class ProductCardComponent implements OnInit {
       })
     });
   }
-  filterCategoriaChild() {
-    this.filterCategoria.emit();
+  filterCategoryChild() {
+    this.filterCategory.emit();
   }
   addCart(product: any) {
     this.cartService.addCart(product)
