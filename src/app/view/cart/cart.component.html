@@ -31,8 +31,10 @@
                 <p class="card-text">Ganancia:S/.{{product.data.precio - product.data.sugerido | number: '.0-2'}}</p>
             </div>
         </div>
-        <img src="../assets/icon/trash.svg" > <!-- (click)="openModalDelete(client)" -->
+        <img src="../assets/icon/trash.svg" (click)="delete(product)"> <!--  -->
     </div>
    
 </div>
 
+<!-- <app-modal
+ [modal]="modal"></app-modal> -->

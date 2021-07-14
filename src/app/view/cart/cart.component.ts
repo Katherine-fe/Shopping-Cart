@@ -12,13 +12,16 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  // products: Product[] = [];
+  modal: boolean= false;
+  products: any;
+  product: Product[];
   products$: Observable<Product[]>;
-
+  
   constructor(
     private cartService: CartService,
     private router: Router,
   ) { 
+    this.product = []
     this.products$ = this.cartService.cart$;
   }
 
@@ -26,8 +29,16 @@ export class CartComponent implements OnInit {
   }
 
   goBack(){
-    console.log('go back');
     this.router.navigate(['./products'])
+  }
+
+  delete(product: Product) {
+    console.log(product);
+    console.log(this.products$);
+    
+    this.products.filter((obj: any) => obj.id == product.id)[0].status = false;
+    this.products.filter((obj: any) => obj.id == product.id)[0].qty = 1;
+    this.cartService.addCart(product, true);
   }
 
 }

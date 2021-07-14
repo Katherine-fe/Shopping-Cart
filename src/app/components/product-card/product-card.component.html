@@ -19,7 +19,6 @@
                 <p class="card-text">Precio sugerido: S/. {{products.data.sugerido}}</p>
                 <button *ngIf="!products.status" class="btn btn-danger" (click)="add(products)">AGREGAR <i class="fas fa-shopping-cart"></i></button>
                 <button *ngIf="products.status" class="btn btn-danger" (click)="delete(products)">QUITAR <i class="fas fas fa-trash-alt"></i></button>
-                <!-- <button class="btn btn-danger" (click)="addCart(product)">AGREGAR <i class="fas fa-shopping-cart"></i></button> -->
             </div>
         </div>
 

@@ -10,6 +10,7 @@ export class ModalComponent implements OnInit {
   @Input() visibleDeleteClient: boolean= false;
   @Input() visibleFinalizado: boolean= false;
   @Input() client: any;
+  @Input() modal: boolean= false
 
   // @Output() getModal: EventEmitter<boolean> = new EventEmitter();
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter();
