@@ -11,37 +11,21 @@ import { Product } from '../../models/products';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  category : string = ""
-
+  category : string = "";
+  filterpost : string = "";
   constructor(private productService: ProductService) {
     
    }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
 
-  
 }
   
-
-
-  
-/*   productsFilter(typeF : string) {
-    this.productService.getProduct().subscribe((catsSnapshot) => {
-      this.products = [];
-      catsSnapshot.forEach((prod: any) => {
-        this.products.push({
-          id: prod.payload.doc.id,
-          data: prod.payload.doc.data()
-        });
-      })
-     const newProd = this.products.filter(omg => omg.data.categoria == typeF)
-      console.log(newProd)
-     return newProd ;
-      })
-    };
-     */
-
     filterCategoria( category : string) {
       this.category = category;
     }  
+/*     buscador(filterpost : string){
+      console.log(filterpost)
+      this.filterpost = filterpost
+    } */
   }
