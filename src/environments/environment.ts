@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase:{
-    apiKey: "AIzaSyD3UsXQia-x3wAkf5NTvwc8ht34O0LwZOc",
-    authDomain: "shopping-cart-877b9.firebaseapp.com",
-    projectId: "shopping-cart-877b9",
-    storageBucket: "shopping-cart-877b9.appspot.com",
-    messagingSenderId: "533547327685",
-    appId: "1:533547327685:web:517eaa619fec342f9550ac"
+    apiKey: "AIzaSyDcd82TuzOVBQ41xEvJTGNqqY1JpfXdFJo",
+    authDomain: "shopping-9b933.firebaseapp.com",
+    projectId: "shopping-9b933",
+    storageBucket: "shopping-9b933.appspot.com",
+    messagingSenderId: "502711325512",
+    appId: "1:502711325512:web:465c6858ca08ebaab3597d"
   }
 };
 
