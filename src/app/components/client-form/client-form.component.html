@@ -33,7 +33,7 @@
         <span>
         <img src="../../assets/Icons/i.png">Consulta el codigo de zona
         </span>
-        <button type="submit" class="btn btn-primary btn-style" >AGREGAR CLIENTE</button>
+        <button type="submit" class="btn btn-primary btn-style" [disabled]="!clientForm.valid" >AGREGAR CLIENTE</button>
     </section>
 
     <section id="otro-cliente" *ngIf="!show">
@@ -53,6 +53,6 @@
         <span>
             <img src="../../assets/Icons/i.png">Consulta el codigo de zona
         </span>
-        <button type="submit"  class="btn btn-primary btnAgregar" >AGREGAR CLIENTE</button>
+        <button type="submit" class="btn btn-primary btn-style" [disabled]="!clientForm.valid">AGREGAR CLIENTE</button>
     </section>
 </form>
