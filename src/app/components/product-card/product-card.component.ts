@@ -15,10 +15,8 @@ export class ProductCardComponent implements OnInit {
   @Input() cart!: string;
   @Output() filterCategory: EventEmitter<any> = new EventEmitter();
 
-  // products!: Product[];
   product: Product[];
   orders: [] = [];
-  /* listProduct: Array<Product>; */
   qty = 1;
 
   constructor(
@@ -50,7 +48,7 @@ export class ProductCardComponent implements OnInit {
     this.filterCategory.emit();
   }
   addCart(product: any) {
-    this.cartService.addCart(product)
+    this.cartService.addCart(product, false);
   }
 
   minus(id: string) {
@@ -66,12 +64,11 @@ export class ProductCardComponent implements OnInit {
   add(product: Product) {
     this.addCart(product)
     this.products.filter((obj: any) => obj.id == product.id)[0].status = true;
-    // this.orders.push({
-    // });
   }
   delete(product: Product) {
     this.products.filter((obj: any) => obj.id == product.id)[0].status = false;
     this.products.filter((obj: any) => obj.id == product.id)[0].qty = 1;
+    this.cartService.addCart(product, true);
 
   }
 

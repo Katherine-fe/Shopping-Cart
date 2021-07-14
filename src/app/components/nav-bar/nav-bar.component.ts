@@ -11,32 +11,27 @@ import { Observable } from 'rxjs';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  show:boolean = false;
+  show: boolean = false;
   total$: Observable<number>;
 
   constructor(
     private auth: AuthService,
     private router: Router,
     private cartService: CartService
-  ) { 
+  ) {
     this.total$ = this.cartService.cart$
-    .pipe(
-      map(products => {
-        console.log(products);
-        
-       const array= products.map((elem)=>{
-          return elem.qty
-        })
-        console.log(array);
-        
-        return array.reduce((accumulator, currentValue) => accumulator + currentValue,0)
-      })
-    )
-    // .subscribe(total =>{ 
-    //   // console.log(products); 
-    //   this.total = total;
-    // })
+      .pipe(
+        map(products => {
+          console.log(products);
 
+          const array = products.map((elem) => {
+            return elem.qty
+          })
+          console.log(array);
+
+          return array.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+        })
+      )
   }
 
   ngOnInit(): void {
@@ -45,11 +40,11 @@ export class NavBarComponent implements OnInit {
     this.show = !this.show
   }
 
-  logout(){
+  logout() {
     this.auth.logout()
-    .then(()=>{
-      this.router.navigate(['./login'])
-    });
+      .then(() => {
+        this.router.navigate(['./login'])
+      });
   }
 
 }
