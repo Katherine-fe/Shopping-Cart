@@ -1,4 +1,6 @@
-<app-modal [client]="client"[visibleDeleteClient]="show" (closeModal)=closeModalDelete($event)></app-modal>
+<app-modal [client]="client" [visibleDeleteClient]="show" 
+(closeModal)=closeModalP($event)></app-modal>
+<app-modal [visibleFinalizado]="show2" (closeModal)=closeModalP($event)></app-modal>
 <!-- 
  (closeModal)=closeModalDelete($event)  -->
 <table class="table simple-table">
@@ -24,4 +26,4 @@
             </td>
     </tbody>
   </table>
-  <button type="button" class="btn btn-primary btn-style">FINALIZAR PEDIDO</button>
+  <button type="button" class="btn btn-primary btn-style" (click)="openModalFinalizado()">FINALIZAR PEDIDO</button>

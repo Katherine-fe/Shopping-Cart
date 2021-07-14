@@ -31,9 +31,10 @@
             <input type="text" class="form-control" formControlName="codigoZona" id="codZone">
         </div>
         <span>
-        <img src="../../assets/Icons/i.png">Consulta el codigo de zona
+        <img src="../../assets/Icons/i.png"><a href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf"
+        target="_blank">Consulta el codigo de zona</a>
         </span>
-        <button type="submit" class="btn btn-primary btn-style" >AGREGAR CLIENTE</button>
+        <button type="submit" class="btn btn-primary btn-style" [disabled]="!clientForm.valid" >AGREGAR CLIENTE</button>
     </section>
 
     <section id="otro-cliente" *ngIf="!show">
@@ -51,8 +52,9 @@
             <input type="text" class="form-control" formControlName="codigoZona" id="codZone">
         </div>
         <span>
-            <img src="../../assets/Icons/i.png">Consulta el codigo de zona
+            <img src="../../assets/Icons/i.png" ><a href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf"
+             target="_blank">Consulta el codigo de zona</a>
         </span>
-        <button type="submit"  class="btn btn-primary btnAgregar" >AGREGAR CLIENTE</button>
+        <button type="submit" class="btn btn-primary btn-style" [disabled]="!clientForm.valid">AGREGAR CLIENTE</button>
     </section>
 </form>
