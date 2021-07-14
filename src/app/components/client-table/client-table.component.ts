@@ -12,6 +12,7 @@ export class ClientTableComponent implements OnInit {
  
 
   show: boolean= false;
+  show2: boolean= false;
   client: object= {};
 
   constructor(private clientService: ClientService) { }
@@ -39,7 +40,12 @@ export class ClientTableComponent implements OnInit {
     this.showModal()
   }
 
-  closeModalDelete(con: boolean){
+  openModalFinalizado(){
+    this.show2=true;
+  }
+
+  closeModalP(con: boolean){
     this.show= con;
+    this.show2=con;
   }
 }

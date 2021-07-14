@@ -8,6 +8,7 @@ import { ClientService } from 'src/app/services/client.service';
 })
 export class ModalComponent implements OnInit {
   @Input() visibleDeleteClient: boolean= false;
+  @Input() visibleFinalizado: boolean= false;
   @Input() client: any;
 
   // @Output() getModal: EventEmitter<boolean> = new EventEmitter();
@@ -17,6 +18,7 @@ export class ModalComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.closeModalP()
   }
 
   deleteClient(){
@@ -27,7 +29,7 @@ export class ModalComponent implements OnInit {
     this.closeModal.emit(false)
   }
 
-  closeModalDelete(){
+  closeModalP(){
     this.closeModal.emit(false)
   }
 
