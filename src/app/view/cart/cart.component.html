@@ -28,7 +28,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">{{product.data.name}}</h6>
                 <p class="card-text">Cómpralo a: S/.{{product.data.precio}}</p> 
                 <p class="card-text">Véndelo a:S/.{{product.data.sugerido}}</p>
-                <p class="card-text">Ganancia:S/.{{product.data.precio - product.data.sugerido}}</p>
+                <p class="card-text">Ganancia:S/.{{product.data.precio - product.data.sugerido | number: '.0-2'}}</p>
             </div>
         </div>
         <img src="../assets/icon/trash.svg" > <!-- (click)="openModalDelete(client)" -->
@@ -36,8 +36,3 @@
    
 </div>
 
-<!-- <ul>
-    <li *ngFor="let product of (products$ | async)">
-        Nombre producto
-    </li>
-</ul> -->
