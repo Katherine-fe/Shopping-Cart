@@ -11,21 +11,15 @@ export class ModalComponent implements OnInit {
   @Input() visibleFinalizado: boolean= false;
   @Input() client: any;
   @Input() modal: boolean= false
-
-  // @Output() getModal: EventEmitter<boolean> = new EventEmitter();
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private clientService: ClientService) { }
-
 
   ngOnInit(): void {
     this.closeModalP()
   }
 
   deleteClient(){
-    // this.clientService.deleteClient(client.id)
-    console.log('click en delete');
-    console.log(this.client)
     this.clientService.deleteClient(this.client.id);
     this.closeModal.emit(false)
   }
@@ -33,9 +27,5 @@ export class ModalComponent implements OnInit {
   closeModalP(){
     this.closeModal.emit(false)
   }
-
-  // getModalC(show: any){
-  //   this.getModal.emit()
-  // }
 
 }

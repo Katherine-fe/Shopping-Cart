@@ -22,24 +22,17 @@ export class LoginComponent implements OnInit {
   ) {   }
 
   ngOnInit(): void {
-    /* this.buildForm(); */
-    /* this.login(); */
   }
 
   public buildForm(){
-    console.log('form');
-    
-    // const today = new Date().toISOString().substring(0, dateLength);
     const minPassLength = 6;
     this.formGroup=this.formBuilder.group({
-      // registeredOn: today,
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(minPassLength)]],
     });
   } 
 
   login(){
-    console.log('click login');
     if (this.formGroup.valid) {
       const value = this.formGroup.value;
       this.authService.login(value.email, value.password)

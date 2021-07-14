@@ -8,9 +8,8 @@ import { ClientService } from 'src/app/services/client.service';
 })
 export class ClientTableComponent implements OnInit {
 
-  @Input() clients: any[] = []; //viene de su padre Client
+  @Input() clients: any[] = [];
  
-
   show: boolean= false;
   show2: boolean= false;
   client: object= {};
@@ -22,20 +21,12 @@ export class ClientTableComponent implements OnInit {
 
   editClient(client: any){
     this.clientService.getClient(client.id).subscribe((clientSnapshot) => {
-      console.log(clientSnapshot);
     })
   }
-
-  // deleteClient(client: any){
-  //   // this.clientService.deleteClient(client.id)
-  //   this.deleteC.emit(client)
-  // }
   showModal(){
     this.show=true;
   }
-
   openModalDelete(client: any){
-    // this.show = cond;
     this.client = client;
     this.showModal()
   }

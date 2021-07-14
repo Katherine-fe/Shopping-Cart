@@ -30,7 +30,7 @@ export class ProductCardComponent implements OnInit {
     this.getListProduct();
     this.filterCategoryChild();
   }
-
+  
   getListProduct() {
     this.productService.getProduct().subscribe((catsSnapshot) => {
       this.products = [];
@@ -50,7 +50,6 @@ export class ProductCardComponent implements OnInit {
   addCart(product: any) {
     this.cartService.addCart(product, false);
   }
-
   minus(id: string) {
     const count = this.products.filter((obj: any) => obj.id == id);
     if (count[0].qty > 1) {
@@ -60,7 +59,6 @@ export class ProductCardComponent implements OnInit {
   plus(id: string) {
     this.products.filter((obj: any) => obj.id == id)[0].qty += 1;
   }
-
   add(product: Product) {
     this.addCart(product)
     this.products.filter((obj: any) => obj.id == product.id)[0].status = true;
@@ -70,8 +68,6 @@ export class ProductCardComponent implements OnInit {
     this.products.filter((obj: any) => obj.id == product.id)[0].qty = 1;
     this.cartService.addCart(product, true);
   }
-
-
 }
 
 
