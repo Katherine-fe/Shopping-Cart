@@ -35,6 +35,7 @@ export class ClientFormComponent implements OnInit {
   }
   
   sendClient(form: any, documentId = this.documentId){
+    
     if (this.currentStatus == 1) {
       this.clientService.createClient(form).then(() => {
         console.log('Documento creado exitósamente!');
